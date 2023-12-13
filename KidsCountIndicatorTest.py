@@ -23,14 +23,20 @@ def validate_excel_data(file_path):
                 if row['LocationId'] != expected_location_id:
                     errors.append(f"Mismatched LocationId for '{row['Location']}' (Expected: {expected_location_id}, Found: {row['LocationId']}) in row {index + 2}")
 
-            # Check for percentage data format
-            if row['DataFormat'] == 'Percent':
-                if not 0.00 <= row['Data'] <= 1.00:
-                    errors.append(f"Non-decimal percentage value {row['Data']} in 'Data' column for percentage format in row {index + 2}.")
-
             # Check for valid values in 'Data' column
             valid_types = (float, int)
             valid_values = ['NA', 'LNE']
+
+            # Check for percentage data format
+            if row['DataFormat'] == 'Percent':
+                try:
+                    if not row['Data'] in valid_values:
+                        if not (0.00 <= float(row['Data']) <= 1.00):
+                            errors.append(f"Value in 'Data' column for percentage format is not between 0.00 and 1.00 in row {index + 1}")
+                except ValueError:
+                    errors.append(f"Non-numeric value or allowed  '{row['Data']}' in 'Data' column for percentage format in row {index + 1}")
+
+            
 
             if row['DataFormat'] not in valid_data_formats:
                 errors.append(f"Invalid data format '{row['DataFormat']}' in row {index + 2}")
