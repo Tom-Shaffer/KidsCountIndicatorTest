@@ -45,7 +45,7 @@ def validate_excel_data(file_path):
                 errors.append(f"Invalid value '{row['Data']}' in 'Data' column in row {index + 2}")
 
     except Exception as e:
-        errors.append(f"Error processing Excel file: {e}")
+        errors.append(f"Error processing Excel file in \"{kidsCountIndicatorExcelFile}\": {e}")
 
     return errors
 
@@ -63,7 +63,7 @@ def is_valid_excel_file(file_path) -> bool:
         pd.read_excel(file_path)
         return True
     except Exception as e:
-        print(f"Error reading Excel file: {e}")
+        print(f"Error reading Excel file in \"{kidsCountIndicatorExcelFile}\": {e}")
         return False
 
 def get_location_of_kids_count_indicator_excel_file() -> str:
@@ -90,6 +90,6 @@ if validation_errors:
     for error in validation_errors:
         print(error)
     print("")
-    print("Please resolve the errors above.")
+    print(f"Please resolve the errors above in \"{kidsCountIndicatorExcelFile}\".")
 else:
-    print("No errors found in the Excel file, congratulations!")
+    print(f"No errors found in \"{kidsCountIndicatorExcelFile}\", congratulations!")
