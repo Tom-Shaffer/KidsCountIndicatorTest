@@ -77,7 +77,6 @@ def get_location_of_kids_count_indicator_excel_file() -> str:
         input()
         exit()
     
-
 kidsCountIndicatorExcelFile = get_location_of_kids_count_indicator_excel_file()
 
 validation_errors = validate_excel_data(kidsCountIndicatorExcelFile)
