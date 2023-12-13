@@ -26,7 +26,7 @@ def validate_excel_data(file_path):
             # Check for percentage data format
             if row['DataFormat'] == 'Percent':
                 if not 0.00 <= row['Data'] <= 1.00:
-                    errors.append(f"Non-decimal value {row['Data']} in 'Data' column for percentage format in row {index + 2}.")
+                    errors.append(f"Non-decimal percentage value {row['Data']} in 'Data' column for percentage format in row {index + 2}.")
 
             # Check for valid values in 'Data' column
             valid_types = (float, int)
