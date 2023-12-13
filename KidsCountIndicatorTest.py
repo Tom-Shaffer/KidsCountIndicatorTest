@@ -12,6 +12,12 @@ def validate_excel_data(file_path):
     try:
         df = pd.read_excel(file_path)
 
+        required_column = ['Location', 'LocationId', 'DataFormat', 'Data']
+
+        for col in required_column:
+            if(col not in df.columns):
+                errors.append(f"Missing column header {col}")
+
        # Iterate over the DataFrame row by row
         for index, row in df.iterrows():
             # Check if location is known
