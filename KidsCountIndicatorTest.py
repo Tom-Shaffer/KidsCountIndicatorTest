@@ -16,7 +16,7 @@ def validate_excel_data(file_path):
         for index, row in df.iterrows():
             # Check if location is known
             if row['Location'] not in locations_dict:
-                errors.append(f"Unknown location '{row['Location']}' in row {index + 2}. Value is {row['Location']}")
+                errors.append(f"Unknown location '{row['Location']}' in row {index + 2}.")
             else:
                 # Check if LocationId matches with the dictionary
                 expected_location_id = locations_dict[row['Location']]
