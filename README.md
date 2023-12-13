@@ -42,13 +42,13 @@ python3 KidsCountIndicatorTest.py "/Users/tomshaffer/Downloads/1.1_TotalPopulati
 Invalid value '--' in 'Data' column in row 6
 Mismatched LocationId for 'Texas' (Expected: 45, Found: 555) in row 15
 Invalid data format 'Porcent' in row 17
-Unknown location 'Banderson' in row 24. Value is Banderson
+Unknown location 'Banderson' in row 24.
 Invalid data format 'Kaitlan' in row 26
-Non-decimal value 1.37 in 'Data' column for percentage format in row 73.
-Unknown location 'De Witt' in row 508. Value is De Witt
-Unknown location 'Dewitt' in row 512. Value is Dewitt
-Unknown location 'mcculloch' in row 1246. Value is mcculloch
-Unknown location 'Mcculloch' in row 1247. Value is Mcculloch
-Unknown location 'Mcmullen' in row 1258. Value is Mcmullen
-Unknown location 'marion' in row 1274. Value is marion
+Non-decimal percentage value 1.37 in 'Data' column for percentage format in row 73.
+Unknown location 'De Witt' in row 508.
+Unknown location 'Dewitt' in row 512.
+Unknown location 'mcculloch' in row 1246.
+Unknown location 'Mcculloch' in row 1247.
+Unknown location 'Mcmullen' in row 1258.
+Unknown location 'marion' in row 1274.
 ```
